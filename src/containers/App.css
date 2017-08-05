@@ -1,0 +1,17 @@
+body {
+  background-color: #e1e3de;
+}
+
+input[type=checkbox] {
+  margin-left: 10px;
+}
+
+input[type=text] {
+  width: 150px;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 400;
+  color: black;
+}
