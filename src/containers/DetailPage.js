@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import Movie from './../components/Movie';
 import MovieDetail from './../components/MovieDetail';
+import RecomendationMovieList from './../components/RecomendationMovieList';
 
 class DetailPage extends React.Component {
 	constructor(props) {
@@ -65,12 +66,7 @@ class DetailPage extends React.Component {
 								<hr />
 								<div className="row">
 									<h1>Recommendation Movies List:</h1>
-									{this.state.recommendations.map((movie) => {
-										return (
-											<Movie movie={movie} key={movie.id} />
-										);
-									})
-									}
+									<RecomendationMovieList recommendations={this.state.recommendations} />
 								</div>
 							</div>
 						}

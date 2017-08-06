@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const SearchBar = (props) => {
 	return (
@@ -21,6 +22,13 @@ const SearchBar = (props) => {
 			</p>
 		</form>
 	);
+};
+
+SearchBar.propTypes = {
+	searchFilter: PropTypes.string.isRequired,
+	filterByPopular: PropTypes.bool.isRequired,
+	changeSearchFilter: PropTypes.func.isRequired,
+	changeFilter: PropTypes.func.isRequired
 };
 
 export default SearchBar;

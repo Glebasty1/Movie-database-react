@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const MovieDetail = (props) => {
 	return(
@@ -14,9 +16,15 @@ const MovieDetail = (props) => {
 				{props.currentMovie.belongs_to_collection !== null && props.currentMovie.belongs_to_collection !== undefined ?
 					<p>Belongs to: {props.currentMovie.belongs_to_collection.name}</p> : null
 				}
+				<Link to="/" className="btn btn-primary">Back</Link>
 			</div>
 		</div>
 	);
 };
+
+MovieDetail.propTypes = {
+	currenMovie: PropTypes.object,
+};
+
 
 export default MovieDetail;

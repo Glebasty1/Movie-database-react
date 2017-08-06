@@ -79,11 +79,12 @@ class App extends React.Component {
                     title="Upcoming Movies List"
                     movies={this.state.upcomingMovies}
                     searchFilter={this.state.searchFilter}
-                  />}
+                  />
+                }
               </div>
             }
-          </div>}
-
+          </div>
+        }
       </div>
     );
   }

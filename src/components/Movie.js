@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const Movie = (props) => {
@@ -11,6 +12,10 @@ const Movie = (props) => {
 			<h4>{props.movie.release_date}</h4>
 		</div>
 	);
+};
+
+Movie.propTypes ={
+	movie: PropTypes.object,
 };
 
 export default Movie;

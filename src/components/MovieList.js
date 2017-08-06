@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Movie from './Movie';
 
@@ -17,6 +18,12 @@ const MoviesList = (props) => {
 			<hr />
 		</div>
 	);
+};
+
+MoviesList.propTypes = {
+	title: PropTypes.string.isRequired,
+	movies: PropTypes.arrayOf(PropTypes.object),
+	searchFilter: PropTypes.string,
 };
 
 export default MoviesList;
