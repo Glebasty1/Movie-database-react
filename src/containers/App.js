@@ -21,8 +21,8 @@ class App extends React.Component {
   componentDidMount() {
     // Make a API request for movies
     axios.all([
-      axios.get('https://api.themoviedb.org/3/movie/popular?api_key=2bffc68560bcf99a67d3ea8fa8f937b4&language=en-US&page=1'),
-      axios.get('https://api.themoviedb.org/3/movie/upcoming?api_key=2bffc68560bcf99a67d3ea8fa8f937b4&language=en-US&page=1')
+      this.popularMoviesRequest(),
+      this.upcomingMoviesRequest()
     ])
       .then(axios.spread((popularMovies, upcomingMovies) => {
         this.setState({
@@ -38,19 +38,27 @@ class App extends React.Component {
         });
         console.log(err);
       });
-    }
+  }
 
-    changeFilter = () => {
-      this.setState(prevState => ({
-            filterByPopular: !prevState.filterByPopular
-      }));
-    };
+  popularMoviesRequest = () => {
+    return axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=2bffc68560bcf99a67d3ea8fa8f937b4&language=en-US&page=1`);
+  };
 
-    changeSearchFilter = (e) => {
-      this.setState({
-        searchFilter: e.target.value.toLowerCase(),
-      });
-    };
+  upcomingMoviesRequest = () => {
+    return axios.get('https://api.themoviedb.org/3/movie/upcoming?api_key=2bffc68560bcf99a67d3ea8fa8f937b4&language=en-US&page=1');
+  };
+
+  changeFilter = () => {
+    this.setState(prevState => ({
+      filterByPopular: !prevState.filterByPopular
+    }));
+  };
+
+  changeSearchFilter = (e) => {
+    this.setState({
+      searchFilter: e.target.value.toLowerCase(),
+    });
+  };
 
   render() {
     return (

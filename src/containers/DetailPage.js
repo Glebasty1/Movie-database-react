@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 
-import Movie from './../components/Movie';
 import MovieDetail from './../components/MovieDetail';
 import RecomendationMovieList from './../components/RecomendationMovieList';
 
@@ -49,7 +48,6 @@ class DetailPage extends React.Component {
 				console.log(err);
 			});
 	}
-
 
 	render() {
 		return(

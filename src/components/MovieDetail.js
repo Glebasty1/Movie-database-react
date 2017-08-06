@@ -6,7 +6,7 @@ const MovieDetail = (props) => {
 	return(
 		<div className="row">
 			<div className="col-md-6 offset-col-md-6">
-				<h1>{props.currentMovie.title} Details</h1>
+				<h1>{props.currentMovie.title}</h1>
 				<h4>Overview: {props.currentMovie.overview}</h4>
 				<span>Homepage:</span><a href={props.currentMovie.homepage}>{props.currentMovie.homepage}</a>
 				<h4>Budget: {props.currentMovie.budget}$</h4>
@@ -23,7 +23,7 @@ const MovieDetail = (props) => {
 };
 
 MovieDetail.propTypes = {
-	currenMovie: PropTypes.object,
+	currentMovie: PropTypes.object,
 };
 
 

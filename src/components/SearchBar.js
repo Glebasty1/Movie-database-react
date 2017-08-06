@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import DebounceInput from 'react-debounce-input';
 
 const SearchBar = (props) => {
 	return (
 		<form>
-			<input
+			<DebounceInput
 				type="text"
+				debounceTimeout={500}
 				value={props.searchFilter}
-				placeholder="Search Movie..." onChange={(e) => props.changeSearchFilter(e)}
+				placeholder="Search Movie..."
+				onChange={(e) => props.changeSearchFilter(e)}
 			/>
 			<br />
 			<br />
